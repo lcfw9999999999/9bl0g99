@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my super cool phone calls blog</title>
+    <style>
+        /* 90's styles */
+        body {
+            background-color: #F0E68C;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 16px;
+            color: #000080;
+            background-image: url('data:image/gif;base64,R0lGODlhEAAQAMQAAP///8zMzIyMjHx8fH5+fm5ubmJiYmFhYWBgYFBQUFAoKChERERPz8/PxsbGyYmJhAQEAAAAAAAAAAAAACH5BAEAAAUALAAAAAAQABAAAAOZaLrc/jDKaOQ5kghKppxPqHSwPchQP8CLH4F+FvE8GkKtHJtJXZJK04Df1at/Fua/ZaywiSGxhWvsUFzJLBe2V4NIAkEA+XwYAKhGDgxkiy/NCkRpachXkysDQxiZDZOJBAQA7');
+        }
+
+        a {
+            color: red;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>all my phone calls !!</h1>
+    <ul id="phoneList">
+        <!-- Phone numbers will be added here using JavaScript -->
+    </ul>
+
+    <script>
+        const phoneNumbers = [
+            "999 999 9999", "879 333 2193", "134 645 7892", "543 123 4567", "876 345 2345", 
+            "123 456 7890", "789 123 4567", "907 564 3234", "675 345 6789", "765 432 1234",
+            "321 654 9870", "789 234 5643", "657 324 1235", "432 123 4567", "901 234 5678",
+            "102 345 6789", "876 543 2345", "123 765 4890", "324 765 1234", "987 654 3210",
+            "456 789 0123", "123 098 7654", "657 890 1234", "543 210 9876", "765 432 1098",
+            "432 109 8765", "234 567 8901", "123 456 7012", "345 678 9012", "567 890 1234",
+            "789 012 3456", "890 123 4567", "901 234 5678", "012 345 6789", "234 567 8901",
+            "345 678 9012", "456 789 0123", "567 890 1234", "678 901 2345", "789 012 3456",
+            "890 123 4567", "901 234 5678", "012 345 6789", "123 456 7890", "234 567 8901",
+            "345 678 9012", "456 789 0123", "567 890 1234", "678 901 2345", "789 012 3456",
+            "890 123 4567", "901 234 5678", "012 345 6789", "123 456 7890", "234 567 8901",
+            "345 678 9012", "456 789 0123", "567 890 1234", "678 901 2345", "789 012 3456",
+            "890 123 4567", "901 234 5678", "012 345 6789", "123 456 7890", "234 567 8901",
+            "345 678 9012", "456 789 0123", "567 890 1234", "678 901 2345", "789 012 3456"
+        ];
+
+        const blogs = {
+            "999 999 9999": "pizza place manager not entertained . . . out of olives anyway.",
+            "134 645 7892": "cute dog in background . . . bad connection tho.",
+            "543 123 4567": "only heard heavy breathing.. kinda creeped out.",
+            "876 345 2345": "this was a fax number ... so weird.",
+            "123 456 7890": "lady spoke in rhymes . . . gave her my poet friend's number.",
+            "789 123 4567": "hung up before i could speak .. rude.",
+            "907 564 3234": "interested in lucy's cd player .. offer was low deep voice. John.",
+            "765 432 1234": "wrong number .. but chatted for 40 mins. made a new friend.",
+            /* ... additional blog entries ... */
+        };
+
+        const phoneList = document.getElementById('phoneList');
+
+        phoneNumbers.forEach(number => {
+            const listItem = document.createElement('li');
+            if (blogs[number]) {
+                const link = document.createElement('a');
+                link.href = `#${number}`;
+                link.innerText = number;
+                link.onclick = function () {
+                    alert(blogs[number]);
+                };
+                listItem.appendChild(link);
+            } else {
+                listItem.innerText = number;
+            }
+            phoneList.appendChild(listItem);
+        });
+    </script>
+</body>
+</html>
